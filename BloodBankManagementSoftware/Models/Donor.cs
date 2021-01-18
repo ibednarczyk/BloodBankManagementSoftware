@@ -1,4 +1,3 @@
-using System;
 
 namespace BloodBankManagementSoftware.Models
 {
@@ -7,16 +6,17 @@ namespace BloodBankManagementSoftware.Models
         public string RequestId { get; set; }
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public long Id { get; set; }
 
-        private string name { get; set; }
+        public string name { get; set; }
 
-        private string adress { get; set; }
+        public string adress { get; set; }
 
-        private string phoneNumber { get; set; }
+        public string phoneNumber { get; set; }
 
-        private string bloodGroup { get; set; }
+        public string bloodGroup { get; set; }
 
-        private char RhFactorType { get; set; }
+        public char RhFactorType { get; set; }
 
 
 
