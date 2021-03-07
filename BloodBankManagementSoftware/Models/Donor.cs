@@ -6,6 +6,7 @@ namespace BloodBankManagementSoftware.Models
         public string RequestId { get; set; }
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
         public long Id { get; set; }
 
         public string name { get; set; }
@@ -17,8 +18,6 @@ namespace BloodBankManagementSoftware.Models
         public string bloodGroup { get; set; }
 
         public char RhFactorType { get; set; }
-
-
 
     }
 }

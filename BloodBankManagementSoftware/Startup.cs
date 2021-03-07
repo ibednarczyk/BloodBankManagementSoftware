@@ -23,7 +23,7 @@ namespace BloodBankManagementSoftware
             services.AddControllersWithViews();
 
             services.AddDbContext<MvcDonorContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MvcDonorContext")));
+                    options.UseSqlite(Configuration.GetConnectionString("MvcDonorContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
