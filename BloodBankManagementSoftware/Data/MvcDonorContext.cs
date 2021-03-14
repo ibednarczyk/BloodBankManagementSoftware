@@ -10,7 +10,7 @@ namespace BloodBankManagementSoftware.Data
         {
         }
 
-        public DbSet<Donor> Donor { get; set; }
+        public DbSet<Donor> Donors { get; set; }
     }
 }
     

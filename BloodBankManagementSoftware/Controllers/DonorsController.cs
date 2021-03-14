@@ -19,7 +19,7 @@ namespace BloodBankManagementSoftware.Controllers
         // GET: Donors1
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Donor.ToListAsync());
+            return View(await _context.Donors.ToListAsync());
         }
 
         // GET: Donors1/Details/5
@@ -30,7 +30,7 @@ namespace BloodBankManagementSoftware.Controllers
                 return NotFound();
             }
 
-            var donor = await _context.Donor
+            var donor = await _context.Donors
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (donor == null)
             {
@@ -49,7 +49,7 @@ namespace BloodBankManagementSoftware.Controllers
         // POST: Donors1/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RequestId,Id,name,adress,phoneNumber,bloodGroup,RhFactorType")] Donor donor)
+        public async Task<IActionResult> Create([Bind("RequestId,Id,Name,Address,PhoneNumber,BloodGroup,RhFactorType")] Donor donor)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +68,7 @@ namespace BloodBankManagementSoftware.Controllers
                 return NotFound();
             }
 
-            var donor = await _context.Donor.FindAsync(id);
+            var donor = await _context.Donors.FindAsync(id);
             if (donor == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace BloodBankManagementSoftware.Controllers
         // POST: Donors1/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("RequestId,Id,name,adress,phoneNumber,bloodGroup,RhFactorType")] Donor donor)
+        public async Task<IActionResult> Edit(long id, [Bind("RequestId,Id,Name,Address,PhoneNumber,BloodGroup,RhFactorType")] Donor donor)
         {
             if (id != donor.Id)
             {
@@ -117,7 +117,7 @@ namespace BloodBankManagementSoftware.Controllers
                 return NotFound();
             }
 
-            var donor = await _context.Donor
+            var donor = await _context.Donors
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (donor == null)
             {
@@ -132,15 +132,15 @@ namespace BloodBankManagementSoftware.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            var donor = await _context.Donor.FindAsync(id);
-            _context.Donor.Remove(donor);
+            var donor = await _context.Donors.FindAsync(id);
+            _context.Donors.Remove(donor);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DonorExists(long id)
         {
-            return _context.Donor.Any(e => e.Id == id);
+            return _context.Donors.Any(e => e.Id == id);
         }
     }
 }

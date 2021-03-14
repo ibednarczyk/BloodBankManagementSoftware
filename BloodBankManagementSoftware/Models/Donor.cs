@@ -9,13 +9,13 @@ namespace BloodBankManagementSoftware.Models
 
         public long Id { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public string adress { get; set; }
+        public string Address { get; set; }
 
-        public string phoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
-        public string bloodGroup { get; set; }
+        public string BloodGroup { get; set; }
 
         public char RhFactorType { get; set; }
 

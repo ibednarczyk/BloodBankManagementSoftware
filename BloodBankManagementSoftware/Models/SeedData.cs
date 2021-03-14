@@ -13,50 +13,50 @@ namespace BloodBankManagementSoftware.Models
             using (var context = new MvcDonorContext(serviceProvider.GetRequiredService
                 <DbContextOptions<MvcDonorContext>>()))
             {
-                if(context.Donor.Any())
+                if(context.Donors.Any())
                 {
                     return; 
                 }
 
-                context.Donor.AddRange(
+                context.Donors.AddRange(
                     new Donor
                     {
                         RequestId = "1",
                         Id = 1,
-                        name = "Ana Scott",
-                        adress = "Munich",
-                        phoneNumber = "777-888-999",
-                        bloodGroup = "A",
+                        Name = "Ana Scott",
+                        Address = "Munich",
+                        PhoneNumber = "777-888-999",
+                        BloodGroup = "A",
                         RhFactorType = '-',
                     },
                     new Donor
                     {
                         RequestId = "2",
                         Id = 2,
-                        name = "Tom Panks",
-                        adress = "United States",
-                        phoneNumber = "22-674-95-583",
-                        bloodGroup = "0",
+                        Name = "Tom Panks",
+                        Address = "United States",
+                        PhoneNumber = "22-674-95-583",
+                        BloodGroup = "0",
                         RhFactorType = '+',
                     },
                     new Donor
                     {
                         RequestId = "3",
                         Id = 3,
-                        name = "Uma Furman",
-                        adress = "New Castle",
-                        phoneNumber = "52-554-78-190",
-                        bloodGroup = "B",
+                        Name = "Uma Furman",
+                        Address = "New Castle",
+                        PhoneNumber = "52-554-78-190",
+                        BloodGroup = "B",
                         RhFactorType = '-',
                     },
                     new Donor
                     {
                         RequestId = "4",
                         Id = 4,
-                        name = "Jack Ravolta",
-                        adress = "L.A.",
-                        phoneNumber = "09-454-44-22",
-                        bloodGroup = "A",
+                        Name = "Jack Ravolta",
+                        Address = "L.A.",
+                        PhoneNumber = "09-454-44-22",
+                        BloodGroup = "A",
                         RhFactorType = '-',
                     }
                     );
