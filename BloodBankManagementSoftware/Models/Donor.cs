@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 
 namespace BloodBankManagementSoftware.Models
 {
@@ -13,10 +14,13 @@ namespace BloodBankManagementSoftware.Models
 
         public string Address { get; set; }
 
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
+        [Display(Name = "Blood Group")]
         public string BloodGroup { get; set; }
 
+        [Display(Name = "Rh Factor Type")]
         public char RhFactorType { get; set; }
 
     }

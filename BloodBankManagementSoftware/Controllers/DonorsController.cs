@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,9 +18,14 @@ namespace BloodBankManagementSoftware.Controllers
         }
 
         // GET: Donors1
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchedName)
         {
-            return View(await _context.Donors.ToListAsync());
+            var donor = from d in _context.Donors
+                        select d;
+
+            donor = donor.Where(s => s.Name.Contains(searchedName)) ?? throw new NullReferenceException();
+          
+            return View(await donor.ToListAsync());
         }
 
         // GET: Donors1/Details/5
