@@ -40,6 +40,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Donors[0].RhFactorType)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Donors[0].EMailAddress)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -63,6 +66,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RhFactorType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMailAddress)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

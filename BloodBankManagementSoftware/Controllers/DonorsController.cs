@@ -66,7 +66,7 @@ namespace BloodBankManagementSoftware.Controllers
         // POST: Donors1/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RequestId,Id,Name,Address,PhoneNumber,BloodGroup,RhFactorType")] Donor donor)
+        public async Task<IActionResult> Create([Bind("RequestId,Id,Name,Address,PhoneNumber,BloodGroup,RhFactorType,EMailAddress")] Donor donor)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace BloodBankManagementSoftware.Controllers
         // POST: Donors1/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("RequestId,Id,Name,Address,PhoneNumber,BloodGroup,RhFactorType")] Donor donor)
+        public async Task<IActionResult> Edit(long id, [Bind("RequestId,Id,Name,Address,PhoneNumber,BloodGroup,RhFactorType,EMailAddress")] Donor donor)
         {
             if (id != donor.Id)
             {

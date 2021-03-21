@@ -3,12 +3,13 @@ using BloodBankManagementSoftware.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BloodBankManagementSoftware.Migrations
 {
     [DbContext(typeof(MvcDonorContext))]
-    [Migration("20210314142540_Migration")]
-    partial class FixedMigration
+    [Migration("20210321153542_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +27,9 @@ namespace BloodBankManagementSoftware.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BloodGroup")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EMailAddress")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")

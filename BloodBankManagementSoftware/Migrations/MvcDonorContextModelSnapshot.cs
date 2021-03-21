@@ -2,6 +2,7 @@
 using BloodBankManagementSoftware.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BloodBankManagementSoftware.Migrations
 {
@@ -24,6 +25,9 @@ namespace BloodBankManagementSoftware.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BloodGroup")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EMailAddress")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")

@@ -2,7 +2,7 @@
 
 namespace BloodBankManagementSoftware.Migrations
 {
-    public partial class FixedMigration : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,8 @@ namespace BloodBankManagementSoftware.Migrations
                     Address = table.Column<string>(type: "TEXT", nullable: true),
                     PhoneNumber = table.Column<string>(type: "TEXT", nullable: true),
                     BloodGroup = table.Column<string>(type: "TEXT", nullable: true),
-                    RhFactorType = table.Column<char>(type: "TEXT", nullable: false)
+                    RhFactorType = table.Column<char>(type: "TEXT", nullable: false),
+                    EMailAddress = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

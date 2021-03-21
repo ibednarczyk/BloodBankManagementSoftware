@@ -23,5 +23,7 @@ namespace BloodBankManagementSoftware.Models
         [Display(Name = "Rh Factor Type")]
         public char RhFactorType { get; set; }
 
+        [Display(Name = "E-Mail address")]
+        public string EMailAddress { get; set; }
     }
 }
