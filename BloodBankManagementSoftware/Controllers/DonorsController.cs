@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BloodBankManagementSoftware.Data;
 using BloodBankManagementSoftware.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BloodBankManagementSoftware.Controllers
 {
@@ -23,9 +24,19 @@ namespace BloodBankManagementSoftware.Controllers
             var donor = from d in _context.Donors
                         select d;
 
+            IQueryable<string> bloodGroupsQuery = from bt in _context.Donors
+                                                  orderby bt.BloodGroup
+                                                  select bt.BloodGroup;
+
             donor = donor.Where(s => s.Name.Contains(searchedName)) ?? throw new NullReferenceException();
-          
-            return View(await donor.ToListAsync());
+
+            var bloodGroupViewModel = new BloodGroupViewModel
+            {
+                BloodGroups = new SelectList(await bloodGroupsQuery.Distinct().ToListAsync()),
+                Donors = await donor.ToListAsync()
+            };
+
+            return View(bloodGroupViewModel);
         }
 
         // GET: Donors1/Details/5

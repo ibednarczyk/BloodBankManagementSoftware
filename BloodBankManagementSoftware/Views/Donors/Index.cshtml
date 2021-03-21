@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BloodBankManagementSoftware.Models.Donor>
+﻿@model BloodBankManagementSoftware.Models.BloodGroupViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -9,8 +9,12 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<form asp-controller="Donors" asp-action="Index">
+<form asp-controller="Donors" asp-action="Index" method="get">
     <p>
+        <select asp-for="BloodGroup" asp-items="Model.BloodGroups">
+            <option value="">All</option>
+        </select>
+
         Name: <input type="text" name="searchedName" />
         <input type="submit" value="Filter" />
     </p>
@@ -19,28 +23,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.RequestId)
+                @Html.DisplayNameFor(model => model.Donors[0].RequestId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.Donors[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+                @Html.DisplayNameFor(model => model.Donors[0].Address)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
+                @Html.DisplayNameFor(model => model.Donors[0].PhoneNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BloodGroup)
+                @Html.DisplayNameFor(model => model.Donors[0].BloodGroup)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RhFactorType)
+                @Html.DisplayNameFor(model => model.Donors[0].RhFactorType)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Donors) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.RequestId)
