@@ -20,6 +20,7 @@ namespace BloodBankManagementSoftware.Models
 
         [Required]
         [Display(Name = "Phone Number")]
+        [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
         
         [RegularExpression(@"[AB0]{1}")]
@@ -35,6 +36,7 @@ namespace BloodBankManagementSoftware.Models
 
         [RegularExpression(@"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")]
         [Display(Name = "E-mail address")]
+        [DataType(DataType.EmailAddress)]
         public string EMailAddress { get; set; }
     }
 }
